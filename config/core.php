@@ -33,7 +33,24 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
+require_once APP . 'plugins' . DS . 'environment' . DS . 'libs' . DS . 'environment.php';
+
+Environment::initialize(array(
+	'develop_server' => 'example.com',
+	'develop_domains' => array(
+		'hiromi',
+	),
+	'production_server' => 'example.net',
+	'production_domains' => array('www'),
+));
+
+if (Environment::isProduction()) {
+	Configure::write('debug', 0);
+} else {
 	Configure::write('debug', 2);
+}
+
+define('__SSL__REDIRECT', Environment::isProduction());
 
 /**
  * CakePHP Log Level:
@@ -102,7 +119,7 @@
  * or in each action using $this->cacheAction = true.
  *
  */
-	//Configure::write('Cache.check', true);
+	Configure::write('Cache.check', !Environment::isDevelop());
 
 /**
  * Defines the default error type when using the log() function. Used for
@@ -201,12 +218,12 @@
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', 'qoovt3nov93t47UubWwvniR2G0FgaC9mi');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '76859309657453542496749683645');
+	Configure::write('Security.cipherSeed', '21934935642496749683645');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -245,7 +262,7 @@
  * If you are on PHP 5.3 uncomment this line and correct your server timezone
  * to fix the date & time related errors.
  */
-	//date_default_timezone_set('UTC');
+	date_default_timezone_set('Asia/Tokyo');
 
 /**
  *
@@ -301,4 +318,24 @@
  *	));
  *
  */
-	Cache::config('default', array('engine' => 'File'));
+	Configure::write('Asset.filter.js', 'dynamic.php');
+	Configure::write('Asset.filter.css', 'dynamic.php');
+
+
+	Cache::config('debug_kit', array(
+		'lock' => true,
+	));
+
+	$baseCacheConfig = array(
+		'engine' => 'File',
+		'probability'=> 100,
+		'duration' => HOUR,
+		'lock' => true,
+	);
+
+	Cache::config('user_temp', array(
+		'prefix' => 'user_temp_',
+	) + $baseCacheConfig);
+
+	Cache::config('default', array(
+	) + $baseCacheConfig);
