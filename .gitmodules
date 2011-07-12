@@ -1,0 +1,42 @@
+[submodule "plugins/collectionable"]
+	path = plugins/collectionable
+	url = git://github.com/hiromi2424/Collectionable.git
+[submodule "plugins/hack"]
+	path = plugins/hack
+	url = git://github.com/hiromi2424/hack_plugin.git
+[submodule "plugins/debug_kit"]
+	path = plugins/debug_kit
+	url = git://github.com/hiromi2424/debug_kit.git
+[submodule "plugins/search"]
+	path = plugins/search
+	url = git://github.com/CakeDC/search.git
+[submodule "plugins/secured"]
+	path = plugins/secured
+	url = git://github.com/hiromi2424/secured.git
+[submodule "plugins/lazy_model"]
+	path = plugins/lazy_model
+	url = git://github.com/Phally/lazy_model.git
+[submodule "plugins/interactive"]
+	path = plugins/interactive
+	url = git://github.com/hiromi2424/interactive.git
+[submodule "plugins/environment"]
+	path = plugins/environment
+	url = git://github.com/monsat/environment.git
+[submodule "plugins/datasources"]
+	path = plugins/datasources
+	url = git://github.com/cakephp/datasources.git
+[submodule "plugins/utilities/controllers/components/transition"]
+	path = plugins/utilities/controllers/components/transition
+	url = git://github.com/hiromi2424/TransitionComponent.git
+[submodule "plugins/cakeplus"]
+	path = plugins/cakeplus
+	url = git://github.com/ichikaway/cakeplus.git
+[submodule "plugins/soft_deletable"]
+	path = plugins/soft_deletable
+	url = git://github.com/evilbloodydemon/cakephp-softdeletable2.git
+[submodule "plugins/maintenance"]
+	path = plugins/maintenance
+	url = git://github.com/hiromi2424/maintenance.git
+[submodule "plugins/ninja"]
+	path = plugins/ninja
+	url = git://github.com/hiromi2424/ninja.git
