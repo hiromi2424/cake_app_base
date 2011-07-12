@@ -40,3 +40,6 @@
 [submodule "plugins/ninja"]
 	path = plugins/ninja
 	url = git://github.com/hiromi2424/ninja.git
+[submodule "plugins/mailer"]
+	path = plugins/mailer
+	url = git@github.com:hiromi2424/mailer.git
