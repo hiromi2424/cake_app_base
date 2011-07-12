@@ -8,8 +8,8 @@ class AppController extends Controller {
 		'RequestHandler' => array(
 			// 'enabled' => false,
 		),
-	    'DebugKit.Toolbar' => array(
-	    	'history' => 5,
+		'DebugKit.Toolbar' => array(
+			'history' => 5,
 			'panels' => array(
 				'Interactive.interactive',
 			),
