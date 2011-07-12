@@ -1,0 +1,1 @@
+<h1><?php echo $this->Html->link(Configure::read('Site.title'), '/'); ?></h1>
